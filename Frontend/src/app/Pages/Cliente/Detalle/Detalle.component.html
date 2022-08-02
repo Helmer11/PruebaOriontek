@@ -1,3 +1,68 @@
-<p>
-  Detalle works!
-</p>
+
+
+<div class="container mt-5">
+
+    <form [formGroup]="formDetalle" >
+      <h2>Cliente</h2>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="cliente_Nombre" placeholder="Nombre">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="cliente_Apellido" placeholder="Apellido">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="cliente_Telefono" placeholder="Telefono">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Celular</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="cliente_Celular" placeholder="Celular">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="cliente_Email" placeholder="Email">
+      </div>
+
+    </form>
+
+
+    <div class="float-right">
+      <a (click)="setDireccion()" ><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+
+    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider" *ngFor="let deta of Detalle" >
+
+      <tr>
+        <th scope="row">{{ deta.clienteDireccionId }}</th>
+        <td>{{ deta.clienteDireccion }}</td>
+        <td> <a  (click)="setEditaDireccion()"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        <td> <a (click)="setDeleteDireccion(deta.clienteDireccionId)" > <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <button type="button" class="btn btn-primary m-3">Actualizar</button>
+  <button type="button" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+
+

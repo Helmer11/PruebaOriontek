@@ -12,7 +12,11 @@ namespace Test_OrionTek_Api.Interfaces
         List<ClientesTran> ListadoCliente();
         List<ClienteDireccionesTran> ListadoDirecciones(int cliente_id);
 
+        string setDireccion(ClienteDireccionesTran cliente);
 
+        string setEditaDireccion(ClienteDireccionesTran cliente);
+
+        string setDeleteDireccion(int cliente_id);
 
     }
 }

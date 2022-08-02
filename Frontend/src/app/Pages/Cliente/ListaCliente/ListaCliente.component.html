@@ -1,24 +1,26 @@
 
-<section class="mt-5">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Correo</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider" *ngFor="let clien of ListaCliente" >
-      <tr>
-        <th scope="row">{{ clien.clienteId }}</th>
-        <td>{{ clien.clienteNombre }}</td>
-        <td>{{ clien.clienteApellido }}</td>
-        <td>{{ clien.clienteEmail }}</td>
-        <td>{{ clien.clienteEmail }}</td>
-        <td>{{ clien.clienteEmail }}</td>
-      </tr>
 
-    </tbody>
-  </table>
-</section>
+  <div class="container mt-lg-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Correo</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider" *ngFor="let clien of ListaCliente" >
+        <tr>
+          <th scope="row">{{ clien.clienteId }}</th>
+          <td>{{ clien.clienteNombre }}</td>
+          <td>{{ clien.clienteApellido }}</td>
+          <td>{{ clien.clienteEmail }}</td>
+          <td> <a routerLink="detalle/{{clien.clienteId}}"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+

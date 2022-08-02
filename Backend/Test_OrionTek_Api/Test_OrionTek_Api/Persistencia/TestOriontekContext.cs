@@ -35,9 +35,11 @@ namespace Test_OrionTek_Api.Persistencia
 
             modelBuilder.Entity<ClienteDireccionesTran>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.ClienteDireccionId);
 
                 entity.ToTable("Cliente_Direcciones_Trans");
+
+                entity.Property(e => e.ClienteDireccionId).HasColumnName("Cliente_Direccion_id");
 
                 entity.Property(e => e.ClienteDireccion)
                     .IsRequired()
@@ -45,14 +47,10 @@ namespace Test_OrionTek_Api.Persistencia
                     .IsUnicode(false)
                     .HasColumnName("Cliente_Direccion");
 
-                entity.Property(e => e.ClienteDireccionId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("Cliente_Direccion_id");
-
                 entity.Property(e => e.ClienteId).HasColumnName("Cliente_ID");
 
                 entity.HasOne(d => d.Cliente)
-                    .WithMany()
+                    .WithMany(p => p.ClienteDireccionesTrans)
                     .HasForeignKey(d => d.ClienteId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Cliente_D__Clien__628FA481");

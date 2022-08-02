@@ -8,7 +8,10 @@ export let APIURL = {
 
 cliente: {
   listado: BASEURL + "Cliente/ListaCliente",
-  Detalle: BASEURL + "Cliente/ClienteDetalle?cliente_ID="
+  Detalle: BASEURL + "Cliente/ClienteDetalle?cliente_ID=",
+  Direccion: BASEURL + "Cliente/DireccionAdd",
+  edita: BASEURL + "Cliente/DireccionEdita",
+  Eliminar: BASEURL + "Cliente/DireccionDelete?clienteID"
 }
 
 
